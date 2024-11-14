@@ -13,7 +13,7 @@ async function downloadFile(url: string, outputPath: string, notFoundLog: string
 
         await Bun.write(outputPath, response);
         console.log(`✅ Downloaded: ${outputPath}`);
-    } catch (error) {
+    } catch (error: any) {
         console.error(`❌ Error downloading ${url}:`, error.message);
     }
 }
@@ -55,7 +55,7 @@ async function processCSV(csvPath: string) {
         }
 
         console.log('\n✨ All downloads completed!');
-    } catch (error) {
+    } catch (error: any) {
         console.error('❌ Error processing CSV:', error.message);
     }
 }
